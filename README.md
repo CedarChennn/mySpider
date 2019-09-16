@@ -1,5 +1,42 @@
-# mySpider
-## Éú³ÉcrawlspiderµÄ
+# myspider
+## ç”Ÿæˆcrawlspiderçš„
 scrapy genspider -t crawl cbirc cbirc.gov.cn
-## ´´½¨ÏîÄ¿
-´´½¨Ò»¸öscrapyÏîÄ¿scrapy startproject mySpiderÉú³ÉÒ»¸öÅÀ³æscrapy genspider itcast "itcast.cn¡±ÌáÈ¡Êı¾İÍêÉÆspider£¬Ê¹ÓÃxpathµÈ·½·¨±£´æÊı¾İpipelineÖĞ±£´æÊı¾İÃüÁî£ºscrapy startproject +<ÏîÄ¿Ãû×Ö>	   scrapy startproject myspider![img](./img/001_project_tree.png)## ÍêÉÆspider![img](./img/002_ÍêÉÆ_01.png)![img](./img/003_ÍêÉÆ_02.png)## spiderµÄÊı¾İ´«µ½pipeline![img](./img/004.png)## Ê¹ÓÃpiplineÍê³Épipline´úÂëºóĞèÒªÔÚsettingÖĞ¿ªÆô## ¼òµ¥ÉèÖÃlogÎªÁËÈÃÎÒÃÇ×Ô¼ºÏ£ÍûÊä³öµ½ÖÕ¶ËµÄÄÚÈİÄÜÈİÒ×¿´Ò»Ğ©£º	ÎÒÃÇ¿ÉÒÔÔÚsettingÖĞÉèÖÃlog¼¶±ğ	ÔÚsettingÖĞÌí¼ÓÒ»ĞĞ£¨È«²¿´óĞ´£©£ºLOG_LEVEL = "WARNING¡±	Ä¬ÈÏÖÕ¶ËÏÔÊ¾µÄÊÇdebug¼¶±ğµÄlogĞÅÏ¢## ÊµÏÖ·­Ò³ÇëÇóscrapy.Request(next_page_url,callback=self.parse)scrapy.RequestÄÜ¹»¹¹½¨Ò»¸örequest£¬Í¬ÊÂÖ¸¶¨ÌáÈ¡Êı¾İµÄcallbackº¯Êıscrapy.Request³£ÓÃ²ÎÊı£º	callback:Ö¸¶¨´«ÈëµÄurl½»¸øÄÇ¸ö½âÎöº¯ÊıÈ¥´¦Àí	meta:ÊµÏÖÔÚ²»Í¬µÄ½âÎöº¯ÊıÖĞ´«µİÊı¾İ£¬mataÄ¬ÈÏ»á´øĞ¯´ø²¿·ÖĞÅÏ¢£¬±ÈÈçÏÂÔØÑÓ³Ù£¬ÇëÇóÉî¶ÈµÈ	dont_filter:Ä¬ÈÏurl»á¾­¹ıallow_domain¹ıÂË¡£Èç¹ûdont_filterÉèÖÃÎªtrue£¬Ôòµ±Ç°µØÖ·²»»á±»¹ıÂË
+## åˆ›å»ºé¡¹ç›®
+åˆ›å»ºä¸€ä¸ªscrapyé¡¹ç›®
+scrapy startproject mySpider
+
+ç”Ÿæˆä¸€ä¸ªçˆ¬è™«
+scrapy genspider itcast "itcast.cnâ€
+
+æå–æ•°æ®
+å®Œå–„spiderï¼Œä½¿ç”¨xpathç­‰æ–¹æ³•
+
+ä¿å­˜æ•°æ®
+pipelineä¸­ä¿å­˜æ•°æ®
+
+å‘½ä»¤ï¼šscrapy startproject +<é¡¹ç›®åå­—>
+	   scrapy startproject myspider
+![img](./img/001_project_tree.png)
+
+## å®Œå–„spider
+![img](./img/002_å®Œå–„_01.png)
+![img](./img/003_å®Œå–„_02.png)
+
+## spiderçš„æ•°æ®ä¼ åˆ°pipeline
+![img](./img/004.png)
+
+## ä½¿ç”¨pipline
+å®Œæˆpiplineä»£ç åéœ€è¦åœ¨settingä¸­å¼€å¯
+
+## ç®€å•è®¾ç½®log
+ä¸ºäº†è®©æˆ‘ä»¬è‡ªå·±å¸Œæœ›è¾“å‡ºåˆ°ç»ˆç«¯çš„å†…å®¹èƒ½å®¹æ˜“çœ‹ä¸€äº›ï¼š
+	æˆ‘ä»¬å¯ä»¥åœ¨settingä¸­è®¾ç½®logçº§åˆ«
+	åœ¨settingä¸­æ·»åŠ ä¸€è¡Œï¼ˆå…¨éƒ¨å¤§å†™ï¼‰ï¼šLOG_LEVEL = "WARNINGâ€
+	é»˜è®¤ç»ˆç«¯æ˜¾ç¤ºçš„æ˜¯debugçº§åˆ«çš„logä¿¡æ¯
+## å®ç°ç¿»é¡µè¯·æ±‚
+scrapy.Request(next_page_url,callback=self.parse)
+scrapy.Requestèƒ½å¤Ÿæ„å»ºä¸€ä¸ªrequestï¼ŒåŒäº‹æŒ‡å®šæå–æ•°æ®çš„callbackå‡½æ•°
+scrapy.Requestå¸¸ç”¨å‚æ•°ï¼š
+	callback:æŒ‡å®šä¼ å…¥çš„urläº¤ç»™é‚£ä¸ªè§£æå‡½æ•°å»å¤„ç†
+	meta:å®ç°åœ¨ä¸åŒçš„è§£æå‡½æ•°ä¸­ä¼ é€’æ•°æ®ï¼Œmataé»˜è®¤ä¼šå¸¦æºå¸¦éƒ¨åˆ†ä¿¡æ¯ï¼Œæ¯”å¦‚ä¸‹è½½å»¶è¿Ÿï¼Œè¯·æ±‚æ·±åº¦ç­‰
+	dont_filter:é»˜è®¤urlä¼šç»è¿‡allow_domainè¿‡æ»¤ã€‚å¦‚æœdont_filterè®¾ç½®ä¸ºtrueï¼Œåˆ™å½“å‰åœ°å€ä¸ä¼šè¢«è¿‡æ»¤
