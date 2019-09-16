@@ -4,6 +4,6 @@
     "\\mySpider",
     "\\mySpider\\spiders"
   ],
-  "SelectedNode": "\\mySpider\\pipelines.py",
+  "SelectedNode": "\\mySpider\\spiders\\itcast.py",
   "PreviewInSolutionExplorer": false
 }
