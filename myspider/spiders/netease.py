@@ -15,7 +15,6 @@ class NeteaseSpider(scrapy.Spider):
         href= response.xpath('//*[@id="js_origina_column"]/div/div/div/div/ul/li/div/ul/li/a/@href').extract()
         for t in tittle:
             item['tittle'] = t
-            print(type(t))
             print(item)
         for h in href:
             item['href'] = h

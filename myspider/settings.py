@@ -8,6 +8,11 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+MYSQL_DB_NAME = 'studyabroadapplication'
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = '123456'
+
 
 BOT_NAME = 'myspider'
 
@@ -19,8 +24,7 @@ LOG_LEVEL = "WARNING"
 
 LOG_FILE = './log.log'   
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -69,6 +73,7 @@ spider_middlewares = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'myspider.pipelines.MyspiderPipeline': 300,
+    'myspider.pipelines.MyspiderPipeline_add': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
