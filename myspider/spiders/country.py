@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import logging
+from myspider.items import MyspiderItem
 # https://www.jianshu.com/p/0a5f36b7dcff
 class CountrySpider(scrapy.Spider):
     name = 'country'
@@ -13,7 +14,7 @@ class CountrySpider(scrapy.Spider):
     # //*[@id="row0"]/td[4]/a/text()
         countrylist=response.xpath('//*[starts-with(@id,"row")]')
         for country in countrylist:
-            item={}
+            item=MyspiderItem()
             item['continent']=country.xpath('./td[1]/text()').extract_first()
             item['country_name'] = country.xpath('./td[3]/span[3]/text()').extract_first()
             item['country_short_name']=country.xpath('./td[4]/a/text()').extract_first()

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import logging
-
+from myspider.items import MyspiderItem
 logger = logging.getLogger(__name__)  # display the current spider name
 
 class NeteaseSpider(scrapy.Spider):
@@ -10,13 +10,12 @@ class NeteaseSpider(scrapy.Spider):
     start_urls = ['https://news.163.com']
 
     def parse(self, response):
-        item = {}
+        item = MyspiderItem()
         tittle = response.xpath('//*[@id="js_origina_column"]/div/div/div/div/ul/li/div/ul/li/a/text()').extract()
-        href= response.xpath('//*[@id="js_origina_column"]/div/div/div/div/ul/li/div/ul/li/a/@href').extract()
+        url= response.xpath('//*[@id="js_origina_column"]/div/div/div/div/ul/li/div/ul/li/a/@href').extract()
         for t in tittle:
-            item['tittle'] = t
-            print(item)
-        for h in href:
-            item['href'] = h
-            print(h)
+            item['tittle'] = t           
+        for u in url:
+            item['url'] = u
+            logger.warning(item)
         yield item

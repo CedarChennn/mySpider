@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\myspider",
-    "\\myspider\\practice",
     "\\myspider\\spiders"
   ],
-  "SelectedNode": "\\myspider\\practice\\09_try_tesseract.py",
+  "SelectedNode": "\\myspider\\spiders\\suning.py",
   "PreviewInSolutionExplorer": false
 }
