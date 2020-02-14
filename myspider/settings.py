@@ -12,17 +12,25 @@ MYSQL_DB_NAME = 'spider'
 MYSQL_HOST = 'localhost'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = '123456'
-
+#UA_LIST=["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36","Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"]
 
 BOT_NAME = 'myspider'
 
 SPIDER_MODULES = ['myspider.spiders']
 NEWSPIDER_MODULE = 'myspider.spiders'
 
+
+##四行实现分布式
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+REDIS_URL = "redis://127.0.0.1:6379"
+
 LOG_LEVEL = "WARNING"
+#COOKIES_DEBUG = True
 
 
-LOG_FILE = './log.log'   
+#LOG_FILE = './log.log'   
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
 # Obey robots.txt rules
@@ -43,7 +51,7 @@ ROBOTSTXT_OBEY = False
 #COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
-#TELNETCONSOLE_ENABLED = False
+TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
@@ -53,14 +61,16 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable spider middlewares
 # see https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-spider_middlewares = {
-    'myspider.middlewares.myspiderspidermiddleware': 543,
-}
+#spider_middlewares = {
+#    'myspider.middlewares.myspiderspidermiddleware': 543,
+#}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'myspider.middlewares.MyspiderDownloaderMiddleware': 543,
+#    #'myspider.middlewares.MyspiderDownloaderMiddleware': 543,
+#    #'myspider.middlewares.RandomAgentMiddleware':544,
+#    #'myspider.middlewares.CheckUserAgent':545,
 #}
 
 # Enable or disable extensions

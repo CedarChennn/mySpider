@@ -32,6 +32,7 @@ class MyspiderPipeline(object):
                  )
             sql = 'INSERT INTO suning_book (id,tittle,price,small_cate,big_cate,url) VALUES(%s,%s,%s,%s,%s,%s)'
             self.db_cur.execute(sql, values)
+            self.db_conn.commit()
             print(self.count)
             self.count+=1
             return item
@@ -87,7 +88,7 @@ class MyspiderPipeline(object):
     def close_spider(self, spider):
         # spider (Spider 对象) – 被关闭的spider
         # 可选实现，当spider被关闭时，这个方法被调用
-        self.db_conn.commit()
+        
         self.db_conn.close()
 
 class MyspiderPipeline_add(object):

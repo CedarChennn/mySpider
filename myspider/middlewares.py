@@ -6,7 +6,17 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import random
 
+#class randomagentmiddleware:
+#    def process_request(self,request,spider):
+#        ua=random.choice(spider.settings.get("ua_list"))
+#        request.headers["user-agent"]=ua
+
+#class checkuseragent:
+#    def process_response(self,request,response,spider):
+#        print(request.headers["user-agent"])
+#        return response
 
 class MyspiderSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,

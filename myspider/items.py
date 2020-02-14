@@ -31,6 +31,7 @@ class MyspiderItem(scrapy.Item):
     id = scrapy.Field()
     tittle = scrapy.Field()
     href = scrapy.Field()
+    url = scrapy.Field()
     status = scrapy.Field()
     name = scrapy.Field()
     publish_date = scrapy.Field()
